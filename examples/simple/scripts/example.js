@@ -4,7 +4,7 @@ var on_dom_loaded = function () {
     var framer = new Diaframer(document.getElementById('canvas'));
     var drawer = framer.getExampleDrawer();
 
-    drawer.draw();
+    drawer.draw_cross();
 };
 
 

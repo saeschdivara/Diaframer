@@ -1,5 +1,6 @@
 
 class Canvas
+
     ########################
     ## PRIVATE PROPERTIES ##
     ########################
@@ -30,6 +31,20 @@ class Canvas
         @context.moveTo(point1.x, point1.y)
         @context.lineTo(point2.x, point2.y)
         @context.stroke()
+
+
+    draw_vertical_line: (point1, length) ->
+        ###
+        ###
+
+        @draw_line(point1, new Point(point1.x, point1.y + length))
+
+
+    draw_horizontal_line: (point1, length) ->
+        ###
+        ###
+
+        @draw_line(point1, new Point(point1.x + length, point1.y))
 
 
     #####################

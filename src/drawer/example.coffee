@@ -22,7 +22,7 @@ class ExampleDrawer extends AbstractDrawer
         super
 
 
-    draw: () ->
+    draw_cross: () ->
         ###
         ###
 

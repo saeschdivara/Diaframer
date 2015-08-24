@@ -1,5 +1,6 @@
 
 class AbstractDrawer
+
     ########################
     ## PRIVATE PROPERTIES ##
     ########################
