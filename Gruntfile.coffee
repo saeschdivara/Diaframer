@@ -54,7 +54,10 @@ module.exports = (grunt) ->
                     app_source_paths
                 ]
 
-                tasks: 'coffee:compile_app'
+                tasks: [
+                    'coffee:compile_app',
+                    'uglify:dist',
+                ]
 
 
     )
