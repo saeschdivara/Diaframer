@@ -1,5 +1,6 @@
 
-class Canvas
+class ExampleDrawer extends AbstractDrawer
+
     ########################
     ## PRIVATE PROPERTIES ##
     ########################
@@ -14,22 +15,26 @@ class Canvas
     ## PUBLIC METHODS ##
     ####################
 
-    constructor: (canvas_element) ->
+    constructor: () ->
         ###
         ###
 
-        @canvas = canvas_element
-        @context = @canvas.getContext('2d')
+        super
 
 
-    draw_line: (point1, point2) ->
+    draw: () ->
         ###
         ###
 
-        @context.beginPath()
-        @context.moveTo(point1.x, point1.y)
-        @context.lineTo(point2.x, point2.y)
-        @context.stroke()
+        @canvas.draw_line(
+            new Point(20, 20),
+            new Point(300, 300)
+        )
+
+        @canvas.draw_line(
+            new Point(20, 300),
+            new Point(300, 20)
+        )
 
 
     #####################

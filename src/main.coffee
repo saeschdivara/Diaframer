@@ -23,6 +23,7 @@ class Diaframer
 
         # Drawer
         @uml = null
+        @example = null
 
 
     getUmlDrawer: () ->
@@ -34,6 +35,17 @@ class Diaframer
         else
             @uml = new UmlDrawer(@canvas)
             return @uml
+
+
+    getExampleDrawer: () ->
+        ###
+        ###
+
+        if @example?
+            return @example
+        else
+            @example = new ExampleDrawer(@canvas)
+            return @example
 
 
     #####################
