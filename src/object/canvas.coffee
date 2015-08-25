@@ -47,6 +47,15 @@ class Canvas
         @draw_line(point1, new Point(point1.x + length, point1.y))
 
 
+    draw_rectangle: (left_corner_point, width, height) ->
+        ###
+        ###
+
+        @context.beginPath()
+        @context.rect(left_corner_point.x, left_corner_point.y, width, height)
+        @context.stroke()
+
+
     #####################
     ## PRIVATE METHODS ##
     #####################
