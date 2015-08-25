@@ -1,5 +1,6 @@
 
 class Rectangle extends Drawable
+
     ########################
     ## PRIVATE PROPERTIES ##
     ########################
@@ -19,6 +20,13 @@ class Rectangle extends Drawable
         ###
 
         super
+
+
+    draw: () ->
+        ###
+        ###
+
+        #
 
 
     #####################

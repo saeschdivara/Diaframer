@@ -37,6 +37,21 @@ class ExampleDrawer extends AbstractDrawer
         )
 
 
+    draw_two_connected_boxes: () ->
+        ###
+        ###
+
+        @canvas.draw_rectangle(
+            new Point(20, 20),
+            300, 200
+        )
+
+        @canvas.draw_rectangle(
+            new Point(20, 320),
+            300, 200
+        )
+
+
     #####################
     ## PRIVATE METHODS ##
     #####################
