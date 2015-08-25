@@ -25,6 +25,10 @@ class Canvas
         @_objects = []
 
 
+    ########################
+    ## LINE DRAWING FUNCS ##
+    ########################
+
     draw_line: (point1, point2) ->
         ###
         ###
@@ -49,6 +53,10 @@ class Canvas
         @draw_line(point1, new Point(point1.x + length, point1.y))
 
 
+    ########################
+    ## RECTANGLE DRAWING  ##
+    ########################
+
     draw_rectangle: (left_corner_point, width, height) ->
         ###
         ###
@@ -66,6 +74,46 @@ class Canvas
 
         return rect
 
+
+    ########################
+    ## OBJECT CONNECTIONS ##
+    ########################
+
+    connect: (obj1, obj2) ->
+        ###
+        ###
+
+        connection_points1 = obj1.get_connection_points()
+        connection_points2 = obj2.get_connection_points()
+
+        nearest_points = @find_nearest_points(connection_points1, connection_points2)
+        @draw_line.apply(@, nearest_points)
+
+
+    find_nearest_points: (points1, points2) ->
+        ###
+        ###
+
+        lowest_diff = 1000000
+        nearest_points = []
+
+        for p1 in points1
+
+            for p2 in points2
+
+                x_diff = Math.abs(p1.x - p2.x)
+                y_diff = Math.abs(p1.y - p2.y)
+
+                total_diff = x_diff + y_diff
+
+                if total_diff < lowest_diff
+                    lowest_diff = total_diff
+                    nearest_points = [
+                        p1, p2
+                    ]
+
+
+        return nearest_points
 
     #####################
     ## PRIVATE METHODS ##

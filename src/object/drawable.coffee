@@ -37,6 +37,13 @@ class Drawable
         @data[key] = value
 
 
+    get_connection_points: () ->
+        ###
+        ###
+
+        throw new Error('This method has to be implemented')
+
+
     draw: () ->
         ###
         ###
