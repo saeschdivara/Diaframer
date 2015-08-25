@@ -22,6 +22,8 @@ class Canvas
         @canvas = canvas_element
         @context = @canvas.getContext('2d')
 
+        @_objects = []
+
 
     draw_line: (point1, point2) ->
         ###
@@ -54,6 +56,15 @@ class Canvas
         @context.beginPath()
         @context.rect(left_corner_point.x, left_corner_point.y, width, height)
         @context.stroke()
+
+        rect = new Rectangle()
+        rect.set('left_corner', left_corner_point)
+        rect.set('width', width)
+        rect.set('height', height)
+
+        @_objects.push(rect)
+
+        return rect
 
 
     #####################

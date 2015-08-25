@@ -41,12 +41,12 @@ class ExampleDrawer extends AbstractDrawer
         ###
         ###
 
-        @canvas.draw_rectangle(
+        rect1 = @canvas.draw_rectangle(
             new Point(20, 20),
             300, 200
         )
 
-        @canvas.draw_rectangle(
+        rect2 = @canvas.draw_rectangle(
             new Point(20, 320),
             300, 200
         )
