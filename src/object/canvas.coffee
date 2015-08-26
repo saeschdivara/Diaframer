@@ -25,6 +25,25 @@ class Canvas
         @_objects = []
 
 
+    ####################
+    ## CANVAS OBJECTS ##
+    ####################
+
+    add_object: (obj) ->
+        ###
+        ###
+
+        @_objects.push(obj)
+
+
+    render_all: () ->
+        ###
+        ###
+
+        for obj in @_objects
+            obj.draw()
+
+
     ########################
     ## LINE DRAWING FUNCS ##
     ########################
@@ -64,15 +83,6 @@ class Canvas
         @context.beginPath()
         @context.rect(left_corner_point.x, left_corner_point.y, width, height)
         @context.stroke()
-
-        rect = new Rectangle()
-        rect.set('left_corner', left_corner_point)
-        rect.set('width', width)
-        rect.set('height', height)
-
-        @_objects.push(rect)
-
-        return rect
 
 
     ########################

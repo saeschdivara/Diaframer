@@ -22,6 +22,18 @@ class Drawable
 
         @data = {}
 
+        rest_arguments = Array.prototype.slice.call(arguments, 1)
+
+        for arg in rest_arguments
+
+            # We only accept objects at the moment
+            if typeof arg == 'object'
+
+                # Iterate over all keys and their values
+                for key, value of arg
+                    @set(key, value)
+
+
 
     get: (key) ->
         ###
