@@ -97,6 +97,15 @@ class Canvas
         lowest_diff = 1000000
         nearest_points = []
 
+        # We need to find out which diff is more important
+        if points1.length >= 1 and points2.length >= 1
+            x_diff = Math.abs(points1[0].x - points2[0].x)
+            y_diff = Math.abs(points1[0].y - points2[0].y)
+
+            is_bigger_x_diff = x_diff > y_diff
+            is_bigger_y_diff = x_diff < y_diff
+
+
         for p1 in points1
 
             for p2 in points2
@@ -104,14 +113,20 @@ class Canvas
                 x_diff = Math.abs(p1.x - p2.x)
                 y_diff = Math.abs(p1.y - p2.y)
 
-                total_diff = x_diff + y_diff
+                if is_bigger_x_diff
+                    total_diff = x_diff
+
+                else if is_bigger_y_diff
+                    total_diff = y_diff
+
+                else
+                    total_diff = x_diff + y_diff
 
                 if total_diff < lowest_diff
                     lowest_diff = total_diff
                     nearest_points = [
                         p1, p2
                     ]
-
 
         return nearest_points
 
